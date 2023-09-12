@@ -48,7 +48,22 @@ def h1(s):
             res += 1
     return res
 
+
+
 def h3(s):
     # implement this function
+    goal = (1,2,3,4,5,6,7,8,0)
     board, _, _ = s
-    return 0
+
+    res=0
+    for i, tile in enumerate(board):
+
+        if tile > 0:
+            goall = goal.index(tile)
+            row = abs(goall // 3 - i // 3)
+            col = abs(goall % 3 - i % 3)
+
+            res += row + col
+
+
+    return res
